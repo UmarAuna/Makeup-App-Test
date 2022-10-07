@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/makeup_navigation"
+    app:startDestination="@id/makeUpListFragment">
+
+    <fragment
+        android:id="@+id/makeUpListFragment"
+        android:name="com.makeup.makeupapptest.home.fragments.MakeUpListFragment"
+        android:label="MakeUpListFragment"
+        tools:layout="@layout/fragment_make_up_list" >
+        <action
+            android:id="@+id/action_makeUpListFragment_to_makeUpDetailFragment"
+            app:destination="@id/makeUpDetailFragment" />
+        <argument
+            android:name="sort"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="com.makeup.makeupapptest.home.models.SortData" />
+        <argument
+            android:name="fromDialog"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/makeUpDetailFragment"
+        android:name="com.makeup.makeupapptest.home.fragments.MakeUpDetailFragment"
+        android:label="MakeUpDetailFragment"
+        tools:layout="@layout/fragment_make_up_detail">
+        <argument
+            android:name="data"
+            app:argType="com.makeup.makeupapptest.home.models.ProductListItem" />
+    </fragment>
+    <dialog
+        android:id="@+id/sortingDialog"
+        android:name="com.makeup.makeupapptest.home.fragments.SortingDialog"
+        android:label="fragment_sorting"
+        tools:layout="@layout/dialog_sorting" >
+        <action
+            android:id="@+id/action_sortingDialog_to_makeUpListFragment"
+            app:destination="@id/makeUpListFragment" />
+    </dialog>
+</navigation>
