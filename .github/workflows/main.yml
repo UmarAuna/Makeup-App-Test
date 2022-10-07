@@ -4,9 +4,8 @@ on:
  push:
    branches:
      - master
-   tags: ver-${{ github.sha }}
-  # tags:
-    # - "v*"
+   tags:
+     - "v*"
 
 jobs:
  apk:
