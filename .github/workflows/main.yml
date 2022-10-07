@@ -6,8 +6,19 @@ on:
      - master
    tags:
      - "v*"
-
+     
 jobs:
+ ktlint:
+    name: Check Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone PR
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Run Ktlint
+        uses: lucasnlm/ktlint-action@master
  apk:
    name: Generate APK
    runs-on: ubuntu-latest
