@@ -1,10 +1,7 @@
 package com.makeup.makeupapptest.home.viewmodels
 
 import android.content.Context
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.makeup.makeupapptest.R
 import com.makeup.makeupapptest.home.fragments.MakeUpListFragmentArgs
 import com.makeup.makeupapptest.home.models.ProductListItem
@@ -68,5 +65,9 @@ class MakeUpListFragmentViewModel : ViewModel(), KoinComponent {
                 e.printStackTrace()
             }
         }
+    }
+
+    fun getUsers(): LiveData<Resource<List<ProductListItem>>> {
+        return _makeupList
     }
 }

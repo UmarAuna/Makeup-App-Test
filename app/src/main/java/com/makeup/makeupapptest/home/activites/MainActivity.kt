@@ -3,12 +3,10 @@ package com.makeup.makeupapptest.home.activites
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import com.makeup.makeupapptest.R
 import com.makeup.makeupapptest.databinding.ActivityMainBinding
 import com.makeup.makeupapptest.home.viewmodels.MainActivityViewModel
-import com.makeup.makeupapptest.util.showToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
